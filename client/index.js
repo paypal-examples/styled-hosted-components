@@ -58,7 +58,7 @@ paypal
     fundingSource: paypal.FUNDING.IDEAL,
     style: {
       base: {
-        backgroundColor: "#111",
+        backgroundColor: "black",
         color: "#cfcfcf",
         fontSize: "16px",
         fontFamily: '"Helvetica Neue", Helvetica, sans-serif',

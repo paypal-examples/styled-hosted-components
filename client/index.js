@@ -1,5 +1,32 @@
 /* eslint-disable consistent-return, new-cap, no-alert, no-console */
 
+var style = {
+  base: {
+    backgroundColor: "black",
+    color: "#cfcfcf",
+    fontSize: "16px",
+    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+    lineHeight: "1.4",
+    letterSpacing: "0.3",
+  },
+  input: {
+    backgroundColor: "#303030",
+    fontSize: "16px",
+    color: "white",
+    borderColor: "#303030",
+    borderRadius: "5px",
+    borderWidth: "1px",
+    padding: "1rem",
+  },
+  invalid: {
+    color: "#FF385C",
+  },
+  active: {
+    color: "#a4a4a4",
+    backgroundColor: "#303030"
+  },
+}
+
 var order = {
   purchase_units: [
     {
@@ -56,32 +83,7 @@ paypal
 paypal
   .Fields({
     fundingSource: paypal.FUNDING.IDEAL,
-    style: {
-      base: {
-        backgroundColor: "black",
-        color: "#cfcfcf",
-        fontSize: "16px",
-        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-        lineHeight: "1.4",
-        letterSpacing: "0.3",
-      },
-      input: {
-        backgroundColor: "#303030",
-        fontSize: "16px",
-        color: "white",
-        borderColor: "#303030",
-        borderRadius: "5px",
-        borderWidth: "1px",
-        padding: "1rem",
-      },
-      invalid: {
-        color: "#FF385C",
-      },
-      active: {
-        color: "#a4a4a4",
-        backgroundColor: "#303030"
-      },
-    },
+    style,
     fields: {
       name: {
         value: "",

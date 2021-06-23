@@ -125,6 +125,8 @@ var idealFields = document.body.querySelector("#ideal-fields");
 var idealBtn = document.getElementById("ideal-btn");
 var paypalBtn = document.body.querySelector("#paypal-btn");
 
+paypalBtn.style.display = "none";
+
 /* radio buttons */
 document.querySelectorAll("input[name=payment-option]").forEach((el) => {
   el.addEventListener("change", (event) => {
@@ -145,5 +147,4 @@ document.querySelectorAll("input[name=payment-option]").forEach((el) => {
   });
 });
 
-idealFields.style.display = "none";
-idealBtn.style.display = "none";
+

@@ -9,28 +9,17 @@
   </head>
 
   <body>
-    <br />
+  <label class="radio-container">      
+  <span id="paypal-mark"></span>
+  <input type="radio" id="paypal-radio" value="paypal"  name="payment-option">
+  <span class="radio-checkmark"></span>
+</label>
+<label class="radio-container">
+<span id="ideal-mark"></span>
+  <input value="ideal" id="ideal-radio" type="radio" checked="checked" name="payment-option">
+  <span class="radio-checkmark"></span>
+</label>
 
-    <label>
-      <input
-        type="radio"
-        name="payment-option"
-        value="paypal"
-        id="paypal-radio"
-        checked
-      />
-      <span id="paypal-mark"></span>
-    </label>
-
-    <label>
-      <input
-        id="ideal-radio"
-        value="ideal"
-        name="payment-option"
-        type="radio"
-      />
-      <span id="ideal-mark"></span>
-    </label>
 
     <div id="ideal-fields"></div>
 

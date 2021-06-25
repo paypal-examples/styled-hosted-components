@@ -1,6 +1,7 @@
 /* eslint-disable consistent-return, new-cap, no-alert, no-console */
 
-var style = {
+// Dark
+var styleDark = {
   base: {
     backgroundColor: "black",
     color: "#cfcfcf",
@@ -24,6 +25,36 @@ var style = {
   active: {
     color: "#a4a4a4",
     backgroundColor: "#303030"
+  },
+}
+
+// Light
+var styleLight = {
+  base: {
+    backgroundColor: "#fafbff",
+    color: "#7c7d84",
+    fontSize: "16px",
+    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+    lineHeight: "1.4",
+    letterSpacing: "0.3",
+  },
+  input: {
+    backgroundColor: "white",
+    fontSize: "16px",
+    color: "#7f8084",
+    borderColor: "#d7d8dc",
+    borderRadius: "5px",
+    borderWidth: "1px",
+    padding: "1rem",
+  },
+  invalid: {
+    color: "#FF385C",
+  },
+  active: {
+    color: "#a4a4a4",
+    backgroundColor: "#fdfdff",
+    borderColor: "#b8b9bf"
+
   },
 }
 
@@ -83,7 +114,7 @@ paypal
 paypal
   .Fields({
     fundingSource: paypal.FUNDING.IDEAL,
-    style,
+    style: styleLight,
     fields: {
       name: {
         value: "",
@@ -108,13 +139,11 @@ paypal
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
           swal("Order Captured!", `Id: ${data.id}, ${Object.keys(data.payment_source)[0]}, ${data.purchase_units[0].payments.captures[0].amount.currency_code} ${data.purchase_units[0].payments.captures[0].amount.value}`, "success");
         })
         .catch(console.error);
     },
     onCancel(data, actions) {
-      console.log(data)
       swal("Order Canceled", `ID: ${data.orderID}`, "warning");
     },
     onError(err) {

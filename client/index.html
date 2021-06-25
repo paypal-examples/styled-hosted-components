@@ -9,17 +9,26 @@
   </head>
 
   <body>
-  <label class="radio-container">      
-  <span id="paypal-mark"></span>
-  <input type="radio" id="paypal-radio" value="paypal"  name="payment-option">
-  <span class="radio-checkmark"></span>
-</label>
-<label class="radio-container">
-<span id="ideal-mark"></span>
-  <input value="ideal" id="ideal-radio" type="radio" checked="checked" name="payment-option">
-  <span class="radio-checkmark"></span>
-</label>
+    <label>
+      <input
+        type="radio"
+        name="payment-option"
+        value="paypal"
+        id="paypal-radio"
+      />
+      <span id="paypal-mark"></span>
+    </label>
 
+    <label>
+      <input
+        id="ideal-radio"
+        value="ideal"
+        name="payment-option"
+        type="radio"
+        checked
+      />
+      <span id="ideal-mark"></span>
+    </label>
 
     <div id="ideal-fields"></div>
 
@@ -27,7 +36,10 @@
     <div id="ideal-btn"></div>
 
     <script src="https://www.paypal.com/sdk/js?client-id=AfPbdUbV4LJdK0-0B0QPeUyHnzGgVhIwZfBO3wYRoazaSYRJAIKwwHnfI0EbekJB42FJuVi-3-vgsQvi&components=buttons,fields,marks,funding-eligibility&enable-funding=ideal&currency=EUR"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" async></script>
+    <script
+      src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"
+      async
+    ></script>
 
     <script src="./index.js"></script>
   </body>

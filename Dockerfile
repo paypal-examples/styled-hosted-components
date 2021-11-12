@@ -1,6 +1,6 @@
 FROM node:14
 
-LABEL vendor="iDEAL JavaScript SDK example"
+LABEL vendor="JavaScript SDK example"
 
 ADD . /
 

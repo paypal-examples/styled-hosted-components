@@ -112,7 +112,7 @@ paypal
   .render("#ideal-mark");
 
 paypal
-  .Fields({
+  .PaymentFields({
     fundingSource: paypal.FUNDING.IDEAL,
     style: styleLight,
     fields: {
@@ -152,23 +152,24 @@ paypal
   })
   .render("#ideal-btn");
 
-var idealFields = document.body.querySelector("#ideal-fields");
+var idealContainer = document.body.querySelector("#ideal-fields");
 var idealBtn = document.getElementById("ideal-btn");
 var paypalBtn = document.body.querySelector("#paypal-btn");
 
-paypalBtn.style.display = "none";
+idealBtn.style.display = "none";
+idealContainer.style.display = "none";
 
 /* radio buttons */
 document.querySelectorAll("input[name=payment-option]").forEach((el) => {
   el.addEventListener("change", (event) => {
     switch (event.target.value) {
       case "paypal":
-        idealFields.style.display = "none";
+        idealContainer.style.display = "none";
         idealBtn.style.display = "none";
         paypalBtn.style.display = "block";
         break;
       case "ideal":
-        idealFields.style.display = "block";
+        idealContainer.style.display = "block";
         idealBtn.style.display = "block";
         paypalBtn.style.display = "none";
         break;
